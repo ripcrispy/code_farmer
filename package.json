@@ -1,0 +1,55 @@
+{
+  "name": "code-farmer",
+  "version": "0.1.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "description": "Code Farmer - a programmable-unit MMORTS",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:client": "vite",
+    "server": "tsx src/server/main.ts",
+    "server:watch": "tsx watch src/server/main.ts",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "start": "tsx src/server/main.ts",
+    "db:migrate": "tsx src/server/tools/migrate.ts",
+    "world:info": "tsx src/server/tools/worldInfo.ts",
+    "world:reset": "tsx src/server/tools/resetWorld.ts",
+    "test": "tsx --test \"tests/**/*.test.ts\"",
+    "smoke": "tsx tools/bot.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src tests tools",
+    "world:upgrade": "tsx src/server/tools/upgradeWorld.ts"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/lint": "^6.9.7",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.14",
+    "@fontsource/new-rocker": "5.3.0",
+    "@pixi/react": "^8.0.0",
+    "pixi.js": "^8.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsx": "^4.19.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/ws": "^8.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.18.0",
+    "vite": "^6.0.0"
+  }
+}

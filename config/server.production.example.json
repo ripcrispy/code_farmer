@@ -1,0 +1,50 @@
+{
+  "$comment": "Production template. Copy to config/server.json (or set CODEFARMER_CONFIG). Set allowedOrigins to your client's URL and CODEFARMER_ADMIN_TOKEN in the environment.",
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3001,
+    "maxConnections": 200,
+    "allowedOrigins": [
+      "https://your-client.example.com"
+    ]
+  },
+  "world": {
+    "seed": "change-me-before-first-start",
+    "generationVersion": 2,
+    "chunkSize": 64,
+    "resourceDensity": 1.0
+  },
+  "simulation": {
+    "tickRate": 10,
+    "scriptOpsPerUnitTick": 400,
+    "scriptOpsPerTick": 200000,
+    "pathRadius": 48,
+    "maxCoordinate": 1000000,
+    "maxCachedChunks": 512
+  },
+  "economy": {
+    "$comment": "storage: \"shared\" (one stock usable anywhere, the default) or \"networks\" (resources sit in storage buildings; costs are paid from the storage network nearest the work). Switching on an existing world converts stock losslessly on startup. The limit ceilings cap how far Library research (Administration line) can raise each player's unit and building limits.",
+    "storage": "shared",
+    "unitLimitCeiling": 300,
+    "buildingLimitCeiling": 400
+  },
+  "combat": {
+    "$comment": "Optional combat. When enabled, each player still opts in to PvP; nobody can be attacked without opting in, except inside contested zones (small areas from the seed where PvP is always on; set contestedZones to false to have none). Hunting animals needs no opt-in.",
+    "enabled": false,
+    "optOutDelaySeconds": 120,
+    "contestedZones": true
+  },
+  "persistence": {
+    "databasePath": "/var/lib/codefarmer/codefarmer.db",
+    "flushIntervalMs": 2000
+  },
+  "network": {
+    "visionChunkRadius": 2,
+    "messagesPerSecond": 20,
+    "messageBurst": 40,
+    "maxMessageBytes": 65536
+  },
+  "admin": {
+    "token": ""
+  }
+}

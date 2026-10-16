@@ -1,0 +1,32 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Game data: the world database, its write-ahead log and backups (never commit)
+data/
+*.db
+*.db-wal
+*.db-shm
+*.bak
+*.bak-wal
+*.bak-shm
+
+# Local notes not published with the project
+CLAUDE.md
+
+# Local configuration and secrets (copy .env.example to .env)
+.env
+.env.*
+!.env.example
+
+# Logs, archives and OS/editor files
+*.log
+npm-debug.log*
+*.tgz
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

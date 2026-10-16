@@ -1,0 +1,51 @@
+{
+  "$comment": "Code Farmer server configuration. See docs/CONFIGURATION.md. World settings are fixed once a world is created.",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3001,
+    "maxConnections": 200,
+    "allowedOrigins": [
+      "*"
+    ]
+  },
+  "world": {
+    "seed": "codefarmer-world-001",
+    "generationVersion": 2,
+    "chunkSize": 64,
+    "resourceDensity": 1.0
+  },
+  "simulation": {
+    "tickRate": 10,
+    "scriptOpsPerUnitTick": 400,
+    "scriptOpsPerTick": 200000,
+    "pathRadius": 48,
+    "maxCoordinate": 1000000,
+    "maxCachedChunks": 512
+  },
+  "economy": {
+    "$comment": "storage: \"shared\" (one stock usable anywhere, the default) or \"networks\" (resources sit in storage buildings; costs are paid from the storage network nearest the work). Switching on an existing world converts stock losslessly on startup. The limit ceilings cap how far Library research (Administration line) can raise each player's unit and building limits.",
+    "storage": "shared",
+    "unitLimitCeiling": 300,
+    "buildingLimitCeiling": 400
+  },
+  "combat": {
+    "$comment": "Optional combat. When enabled, each player still opts in to PvP; nobody can be attacked without opting in, except inside contested zones (small areas from the seed where PvP is always on; set contestedZones to false to have none). Hunting animals needs no opt-in. pve: units can fight monsters in lairs (generation v3 worlds) even when enabled is false.",
+    "enabled": false,
+    "optOutDelaySeconds": 120,
+    "contestedZones": true,
+    "pve": true
+  },
+  "persistence": {
+    "databasePath": "data/codefarmer.db",
+    "flushIntervalMs": 2000
+  },
+  "network": {
+    "visionChunkRadius": 2,
+    "messagesPerSecond": 20,
+    "messageBurst": 40,
+    "maxMessageBytes": 65536
+  },
+  "admin": {
+    "token": ""
+  }
+}
